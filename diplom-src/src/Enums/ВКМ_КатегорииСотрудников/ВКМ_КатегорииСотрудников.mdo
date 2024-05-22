@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e27090d5-1c5b-4ce6-91cd-963d7b3352a0">
+  <producedTypes>
+    <refType typeId="e7919d27-f95c-45d5-830b-bbb9207fe862" valueTypeId="b679aefe-aa77-4f0b-94e8-7cc64136cfc5"/>
+    <listType typeId="0baa156a-02f2-4ecf-8cce-c41d2cf69c17" valueTypeId="c3b4a30b-fa59-4d07-bab0-1398bad2bab3"/>
+    <managerType typeId="00c4c69f-d2dc-423a-aa9e-84656bf05296" valueTypeId="b6b0b767-a416-46d8-8a83-f054894c63b6"/>
+  </producedTypes>
+  <name>ВКМ_КатегорииСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ категории сотрудников</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="e58ccc6e-dc55-4335-a1dc-b82d26b964e0">
+    <name>Специалисты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Специалисты</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="609d89cb-697d-46d2-941b-b63e6d61c273">
+    <name>АдминистративныйПерсонал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Административный персонал</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

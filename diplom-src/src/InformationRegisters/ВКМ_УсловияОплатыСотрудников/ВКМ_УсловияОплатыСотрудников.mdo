@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="688e57cc-6199-4009-877e-9de310d11fbc">
+  <producedTypes>
+    <selectionType typeId="f095e8fc-5610-4aa7-8786-6659e5aa550e" valueTypeId="8f05c7c7-9cc1-4b9f-aafd-830a91531220"/>
+    <listType typeId="57df3737-45d3-4d88-b71f-ce3409f9a9d3" valueTypeId="2cb65142-415d-42c3-8ffb-231e2b96ff84"/>
+    <managerType typeId="c47bb9d5-b1cd-4518-a386-cb32920b697b" valueTypeId="7ef531ae-c720-48e0-b0bf-edbd2ac001d7"/>
+    <recordSetType typeId="cc7d73de-57b7-42ae-978a-f486c3f29991" valueTypeId="bc7027a1-2fc3-4704-a891-715d842040a0"/>
+    <recordKeyType typeId="0ee549fb-c1ef-46ef-bdb2-93087f84dbd2" valueTypeId="f122e8cb-78a0-4e80-bd17-7c41700577b9"/>
+    <recordType typeId="8e6a60ea-fa2e-4b51-abab-c2e35909029c" valueTypeId="3415910f-b3d8-445e-81a5-2f9101241faa"/>
+    <recordManagerType typeId="ba220bd3-20f7-44b2-bc28-5d4b946af2e7" valueTypeId="bbc761ed-a118-4cb2-89e9-0beaf19af5dc"/>
+  </producedTypes>
+  <name>ВКМ_УсловияОплатыСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Условия оплаты сотрудников</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Условие оплаты сотрудника</value>
+  </recordPresentation>
+  <resources uuid="38e9d1d3-2913-41f1-a2ca-aa214776578b">
+    <name>Оклад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оклад</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="de58d2c3-991d-46be-b393-4ce61c38152c">
+    <name>ПроцентОтРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент от работ</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="dde86320-b5b0-46f2-9a90-97821645969a">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5566b871-ec8b-4304-814a-25898296764a">
+    <name>КатегорияСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория сотрудника</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВКМ_КатегорииСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

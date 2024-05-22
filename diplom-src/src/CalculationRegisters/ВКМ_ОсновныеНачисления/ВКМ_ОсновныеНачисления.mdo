@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5c185a04-fa06-4575-8408-c4bfa1a9ddaa">
+  <producedTypes>
+    <selectionType typeId="2898731e-4a9d-432b-aabe-25008db3c5bf" valueTypeId="ddd514cb-2d52-46f6-b5d9-8aadd330b958"/>
+    <listType typeId="be14b0f2-75d8-4be2-8dc5-aca07f65f634" valueTypeId="915ed525-ebd9-4ac9-bc82-1ac62a93a73f"/>
+    <managerType typeId="180f444c-2d23-4138-a031-52e582a3d09e" valueTypeId="c2b27af9-4be5-435f-badb-abcc675cac90"/>
+    <recordSetType typeId="81e5be4c-1a76-4567-ab8a-fe2a4fb92e91" valueTypeId="8f4b3e14-6459-4257-ab81-e802f3c89595"/>
+    <recordKeyType typeId="f1c3cbc9-4492-4a2d-8805-09c76b38bec5" valueTypeId="a31835f9-5b9e-4351-be1d-2c3e75584b43"/>
+    <recordType typeId="7dabaeff-5074-45f8-b0e9-0d26ee71d1c9" valueTypeId="e88f84b4-102f-416f-8a3b-7571431ed46f"/>
+    <recalcsType typeId="f55ddcf2-dfec-4711-af5e-29f2950af665" valueTypeId="75978b0b-a8db-4b0b-91b7-c496abb04b0f"/>
+  </producedTypes>
+  <name>ВКМ_ОсновныеНачисления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основные начисления</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <periodicity>Month</periodicity>
+  <actionPeriod>true</actionPeriod>
+  <basePeriod>true</basePeriod>
+  <schedule>InformationRegister.ВКМ_ГрафикиРаботы</schedule>
+  <scheduleValue>InformationRegister.ВКМ_ГрафикиРаботы.Resource.РабочихДней</scheduleValue>
+  <scheduleDate>InformationRegister.ВКМ_ГрафикиРаботы.Dimension.Дата</scheduleDate>
+  <chartOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</chartOfCalculationTypes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f3551e1f-e76f-4a3b-afc2-182338f735f2">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="ce8f19ee-24fa-48c8-8351-14e3d58424f5">
+    <name>Размер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="298deff2-abda-4d9e-9381-21e5e8ab7f6b">
+    <name>График</name>
+    <synonym>
+      <key>ru</key>
+      <value>График</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_ГрафикиРабот</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="0f6761ab-922e-45b5-8594-b3cf0d06aa5a">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="e6395731-45a4-4a35-9e4b-d4ea9dbdb2b3">
+    <name>КатегорияСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория сотрудника</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВКМ_КатегорииСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:CalculationRegister>
