@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9080e87a-7803-4816-8dc3-192a8e0a6c1a">
+  <name>ВКМ_ТелеграмОповещения</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ телеграм оповещения</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+</mdclass:Role>

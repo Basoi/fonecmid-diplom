@@ -26,4 +26,12 @@
       <value>Покупатель</value>
     </synonym>
   </enumValues>
+  <enumValues uuid="1820d1f1-9fca-429e-b652-4879efa6badb">
+    <name>ВКМ_АбонентскоеОбслуживание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Абонентское обслуживание</value>
+    </synonym>
+    <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  </enumValues>
 </mdclass:Enum>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ce304d43-b231-4fb1-b1b9-1a8cfa63a149">
+  <name>ВКМ_ОбслуживаниеКлиентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ обслуживание клиентов</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Document.ВКМ_ОбслуживаниеКлиента</content>
+  <content>Constant.ВКМ_ТокенУправленияТелеграмБотом</content>
+  <content>Constant.ВКМ_ИдентификаторГруппыДляОповещения</content>
+  <content>Catalog.ВКМ_УведомленияТелеграмБоту</content>
+  <content>Role.ВКМ_ОбслуживаниеКлиентаДобавлениеИзменение</content>
+  <content>Role.ВКМ_ОбслуживаниеКлиентаЧтениеПросмотр</content>
+  <content>CommonModule.ВКМ_ОбщегоНазначенияHTTP</content>
+  <content>CommonModule.ВКМ_Телеграм</content>
+  <content>CommonModule.ВКМ_Служебный</content>
+  <content>Catalog.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</content>
+  <content>AccumulationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
+  <content>ScheduledJob.ВКМ_ОбработкаТелеграмУведомлений</content>
+  <content>Constant.ВКМ_НоменклатураАбонентскаяПлата</content>
+  <content>Constant.ВКМ_НоменклатураРаботыСпециалиста</content>
+  <content>DataProcessor.ВКМ_МассовоеСозданиеАктов</content>
+  <content>CommonModule.ВКМ_ДлительныйМодуль</content>
+  <content>Role.ВКМ_ИспользованиеМассовоеСозданиеАктов</content>
+  <content>Role.ВКМ_ТелеграмОповещения</content>
+  <content>497b4bd3-f8ce-4f33-aa30-c5b98be6cc61</content>
+  <content>3cc92399-4dda-46d3-aa7b-6eca085ade82</content>
+  <content>Catalog.ВКМ_Сотрудники</content>
+  <content>Role.ВКМ_Подсистемы</content>
+  <parentSubsystem>Subsystem.ВКМ_ДобавленныеОбъекты</parentSubsystem>
+</mdclass:Subsystem>

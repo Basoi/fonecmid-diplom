@@ -8,6 +8,7 @@
     <key>ru</key>
     <value>Владелец присоединенных файлов</value>
   </synonym>
+  <comment>//++ ИЗМЕНЕНО Басейко О.С. ВКМ</comment>
   <type>
     <types>CatalogRef.Контрагенты</types>
     <types>CatalogRef.ПапкиФайлов</types>
@@ -16,6 +17,7 @@
     <types>DocumentRef.ПоступлениеТоваровУслуг</types>
     <types>CatalogRef.ДоговорыКонтрагентов</types>
     <types>DocumentRef.РеализацияТоваровУслуг</types>
+    <types>DocumentRef.ВКМ_ОбслуживаниеКлиента</types>
     <types>CatalogRef.ИдентификаторыОбъектовМетаданных</types>
   </type>
 </mdclass:DefinedType>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="18c1dbb6-ea6c-40d6-b89b-3f00b2f5e28d">
+  <producedTypes>
+    <objectType typeId="e4ed5b9d-6b37-4b40-9432-b22f3a9db92a" valueTypeId="2bee0ab6-e98d-4572-9bb4-cd760167168c"/>
+    <refType typeId="856f3a2c-4528-4d2d-b05b-7c85310d4c65" valueTypeId="b8679e25-c1c8-4cab-96e1-041bad5a58a8"/>
+    <selectionType typeId="1cb04ae5-ba3a-4241-bffc-fc4a9f88ecfa" valueTypeId="e8771b9c-78ab-4177-9fde-00ddbb0cdad4"/>
+    <listType typeId="6a31e499-6394-40b5-ae56-ded3e099a41e" valueTypeId="60deded6-5d12-4f32-b709-35d5965f44bb"/>
+    <managerType typeId="81738739-f46d-4045-8d9b-9d1051d99915" valueTypeId="05f4860f-feae-4fd2-a03b-21e17ef06b39"/>
+  </producedTypes>
+  <name>ВКМ_Сотрудники</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ сотрудники</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВКМ_Сотрудники.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ВКМ_Сотрудники.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Сотрудник</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Сотрудники</value>
+  </listPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="6a3d4e91-eafc-4cda-aa26-2e45c4f56f07">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

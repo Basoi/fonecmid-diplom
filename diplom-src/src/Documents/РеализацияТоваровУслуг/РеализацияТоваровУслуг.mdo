@@ -12,6 +12,7 @@
     <key>ru</key>
     <value>Реализация товаров и услуг</value>
   </synonym>
+  <comment>//++ ИЗМЕНЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.РеализацияТоваровУслуг.StandardAttribute.Number</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
@@ -71,6 +72,7 @@
   <defaultObjectForm>Document.РеализацияТоваровУслуг.Form.ФормаДокумента</defaultObjectForm>
   <defaultListForm>Document.РеализацияТоваровУслуг.Form.ФормаСписка</defaultListForm>
   <registerRecords>AccumulationRegister.ОстаткиТоваров</registerRecords>
+  <registerRecords>AccumulationRegister.ВКМ_ВыполненныеКлиентуРаботы</registerRecords>
   <registerRecords>AccumulationRegister.ОбработкаЗаказов</registerRecords>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
@@ -114,6 +116,7 @@
       <key>ru</key>
       <value>Договор</value>
     </synonym>
+    <comment>//++ ИЗМЕНЕНО Басейко О.С. ВКМ</comment>
     <type>
       <types>CatalogRef.ДоговорыКонтрагентов</types>
     </type>
@@ -128,12 +131,6 @@
       <name>Отбор.Организация</name>
       <field>Document.РеализацияТоваровУслуг.Attribute.Организация</field>
     </choiceParameterLinks>
-    <choiceParameters>
-      <name>Отбор.ВидДоговора</name>
-      <value xsi:type="core:ReferenceValue">
-        <value>Enum.ВидыДоговоровКонтрагентов.EnumValue.Покупатель</value>
-      </value>
-    </choiceParameters>
     <fillFromFillingValue>true</fillFromFillingValue>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
@@ -165,12 +162,12 @@
       <key>ru</key>
       <value>Основание</value>
     </synonym>
+    <comment>//++ ИЗМЕНЕНО Басейко О.С. ВКМ</comment>
     <type>
       <types>DocumentRef.ЗаказПокупателя</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
@@ -410,4 +407,12 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
   </tabularSections>
+  <templates uuid="ded59422-a126-4517-b310-0982bf5f2664">
+    <name>ПФ_MXL_ВКМ_АктаОбОказанныхУслугах</name>
+    <synonym>
+      <key>ru</key>
+      <value>Акт об оказанных услугах</value>
+    </synonym>
+    <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  </templates>
 </mdclass:Document>

@@ -8,6 +8,7 @@
     <key>ru</key>
     <value>Присоединенный файл</value>
   </synonym>
+  <comment>//++ ИЗМЕНЕНО Басейко О.С. ВКМ</comment>
   <type>
     <types>CatalogRef.ДоговорыКонтрагентовПрисоединенныеФайлы</types>
     <types>CatalogRef.РеализацияТоваровУслугПрисоединенныеФайлы</types>
@@ -16,6 +17,7 @@
     <types>CatalogRef.Файлы</types>
     <types>CatalogRef.КонтрагентыПрисоединенныеФайлы</types>
     <types>CatalogRef.ОрганизацииПрисоединенныеФайлы</types>
+    <types>CatalogRef.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</types>
     <types>CatalogRef.ВерсииФайлов</types>
   </type>
 </mdclass:DefinedType>
