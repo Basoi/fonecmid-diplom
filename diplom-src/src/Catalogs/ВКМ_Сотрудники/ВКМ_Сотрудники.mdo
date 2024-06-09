@@ -10,7 +10,7 @@
   <name>ВКМ_Сотрудники</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ сотрудники</value>
+    <value>Сотрудники</value>
   </synonym>
   <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>

@@ -3,7 +3,7 @@
   <name>ВКМ_ДобавленныеОбъекты</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ добавленные объекты</value>
+    <value>ВКМ</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
@@ -45,6 +45,10 @@
   <content>Enum.ВКМ_КатегорииСотрудников</content>
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
   <content>Role.ВКМ_Подсистемы</content>
+  <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
+  <content>InformationRegister.ВКМ_ГрафикОтпусков</content>
   <subsystems>ВКМ_ОбслуживаниеКлиентов</subsystems>
   <subsystems>ВКМ_РасчетЗарплаты</subsystems>
 </mdclass:Subsystem>

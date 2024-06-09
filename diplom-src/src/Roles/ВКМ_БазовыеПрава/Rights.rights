@@ -57,5 +57,17 @@
 			<name>AnalyticsSystemClient</name>
 			<value>true</value>
 		</right>
+		<right>
+			<name>ThickClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>ThinClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>WebClient</name>
+			<value>true</value>
+		</right>
 	</object>
 </Rights>

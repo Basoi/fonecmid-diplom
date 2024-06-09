@@ -15,8 +15,13 @@
   </synonym>
   <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
   <dataLockControlMode>Managed</dataLockControlMode>
   <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Выполненные сотрудником работы</value>
+  </listPresentation>
   <resources uuid="d5169881-8285-4407-be86-e51479d485bb">
     <name>ЧасовКОплате</name>
     <synonym>

@@ -38,10 +38,10 @@
     <fullTextSearch>Use</fullTextSearch>
   </resources>
   <dimensions uuid="6eabc3de-95d7-4bad-9992-7db2f1fce845">
-    <name>Сотрудники</name>
+    <name>Сотрудник</name>
     <synonym>
       <key>ru</key>
-      <value>Сотрудники</value>
+      <value>Сотрудник</value>
     </synonym>
     <type>
       <types>CatalogRef.ВКМ_Сотрудники</types>

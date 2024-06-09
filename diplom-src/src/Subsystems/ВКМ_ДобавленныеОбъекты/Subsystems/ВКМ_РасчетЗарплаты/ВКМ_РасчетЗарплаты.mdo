@@ -3,7 +3,7 @@
   <name>ВКМ_РасчетЗарплаты</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ расчет зарплаты</value>
+    <value>Расчет зарплаты</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
@@ -21,5 +21,9 @@
   <content>InformationRegister.ВКМ_ГрафикиРаботы</content>
   <content>Enum.ВКМ_КатегорииСотрудников</content>
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
+  <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
+  <content>InformationRegister.ВКМ_ГрафикОтпусков</content>
   <parentSubsystem>Subsystem.ВКМ_ДобавленныеОбъекты</parentSubsystem>
 </mdclass:Subsystem>

@@ -84,17 +84,4 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
   </dimensions>
-  <dimensions uuid="e6395731-45a4-4a35-9e4b-d4ea9dbdb2b3">
-    <name>КатегорияСотрудника</name>
-    <synonym>
-      <key>ru</key>
-      <value>Категория сотрудника</value>
-    </synonym>
-    <type>
-      <types>EnumRef.ВКМ_КатегорииСотрудников</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-  </dimensions>
 </mdclass:CalculationRegister>

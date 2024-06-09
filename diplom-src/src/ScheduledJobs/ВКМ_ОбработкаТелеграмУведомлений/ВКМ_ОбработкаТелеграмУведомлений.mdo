@@ -3,7 +3,7 @@
   <name>ВКМ_ОбработкаТелеграмУведомлений</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ обработка телеграм уведомлений</value>
+    <value>Обработка телеграм уведомлений</value>
   </synonym>
   <methodName>CommonModule.ВКМ_Телеграм.ПроверкаУведомленийТелеграм</methodName>
   <use>true</use>

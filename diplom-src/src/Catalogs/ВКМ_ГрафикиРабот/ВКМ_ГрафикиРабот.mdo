@@ -10,7 +10,7 @@
   <name>ВКМ_ГрафикиРабот</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ графики работ</value>
+    <value>Графики работ</value>
   </synonym>
   <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>
