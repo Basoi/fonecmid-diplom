@@ -322,15 +322,19 @@
       <name>ВыплатыКоманднаяПанель</name>
       <id>12</id>
       <items xsi:type="form:Button">
-        <name>ФормаРассчитатьВыплаты</name>
+        <name>ФормаЗаполнитьНачисления</name>
         <id>32</id>
+        <title>
+          <key>ru</key>
+          <value>Заполнить начисления</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
           <common>true</common>
         </userVisible>
         <extendedTooltip>
-          <name>ФормаРассчитатьВыплатыРасширеннаяПодсказка</name>
+          <name>ФормаЗаполнитьНачисленияРасширеннаяПодсказка</name>
           <id>33</id>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -344,7 +348,7 @@
             <horizontalAlign>Left</horizontalAlign>
           </extInfo>
         </extendedTooltip>
-        <commandName>Form.Command.РассчитатьВыплаты</commandName>
+        <commandName>Form.Command.ЗаполнитьНачисления</commandName>
         <representation>Auto</representation>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -560,10 +564,10 @@
     <savedData>true</savedData>
   </attributes>
   <formCommands>
-    <name>РассчитатьВыплаты</name>
+    <name>ЗаполнитьНачисления</name>
     <title>
       <key>ru</key>
-      <value>Рассчитать выплаты</value>
+      <value>Заполнить начисления</value>
     </title>
     <id>1</id>
     <use>
@@ -571,7 +575,7 @@
     </use>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
-        <name>РассчитатьВыплаты</name>
+        <name>ЗаполнитьНачисления</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
