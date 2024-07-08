@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d651ecb3-6818-4c9c-b12c-0fb63e90772d">
+  <producedTypes>
+    <objectType typeId="d9396b3d-ef67-442a-9f02-da61fb95a65f" valueTypeId="72fabbf6-687d-440f-968b-a5d6014031af"/>
+    <managerType typeId="41777635-45d2-4b8b-8e67-51fbb85e8b9f" valueTypeId="a30fab2e-80ff-48d4-af4f-a965fa3bb3a8"/>
+  </producedTypes>
+  <name>ВКМ_ВыработкаСпециалистов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выработка специалистов</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.ВКМ_ВыработкаСпециалистов.Template.СхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <templates uuid="5b914e9c-8d57-447f-b157-8c865b82bce2">
+    <name>СхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

@@ -580,6 +580,10 @@
   <roles>Role.ВКМ_ТелеграмОповещения</roles>
   <roles>Role.ВКМ_РасчетЗарплатыЧтениеПросмотр</roles>
   <roles>Role.ВКМ_РасчетЗарплатыДобавлениеИзменение</roles>
+  <roles>Role.ВКМ_ВыработкаСпециалистовИспользование</roles>
+  <roles>Role.ВКМ_АнализВыставленныхАктовИспользование</roles>
+  <roles>Role.ВКМ_РасчетыССотрудникамиИспользование</roles>
+  <roles>Role.ВКМ_РасходЗапланированныхОтпусковИспользование</roles>
   <commonTemplates>CommonTemplate.ДанныеПечатиОбщиеРеквизиты</commonTemplates>
   <commonTemplates>CommonTemplate.ДанныеПечатиРегистрСимволов</commonTemplates>
   <commonTemplates>CommonTemplate.ИнструкцияПоСозданиюФаксимильнойПодписиИПечати</commonTemplates>
@@ -1221,6 +1225,10 @@
   <reports>Report.ПрогрессОтложенногоОбновления</reports>
   <reports>Report.СведенияОПользователях</reports>
   <reports>Report.УниверсальныйОтчет</reports>
+  <reports>Report.ВКМ_ВыработкаСпециалистов</reports>
+  <reports>Report.ВКМ_АнализВыставленныхАктов</reports>
+  <reports>Report.ВКМ_РасчетыССотрудниками</reports>
+  <reports>Report.ВКМ_РасходЗапланированныхОтпусков</reports>
   <dataProcessors>DataProcessor.АвтоматическоеИзвлечениеТекстов</dataProcessors>
   <dataProcessors>DataProcessor.ВводКонтактнойИнформации</dataProcessors>
   <dataProcessors>DataProcessor.ГрупповоеИзменениеРеквизитов</dataProcessors>

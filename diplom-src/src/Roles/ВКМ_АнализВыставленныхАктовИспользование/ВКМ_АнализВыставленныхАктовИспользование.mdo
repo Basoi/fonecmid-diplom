@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e913aac3-8297-4f90-963c-45f031b7c05c">
+  <name>ВКМ_АнализВыставленныхАктовИспользование</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ выставленных актов (Отчет)</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+</mdclass:Role>

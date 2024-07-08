@@ -49,6 +49,15 @@
   <content>Document.ВКМ_ВыплатаЗарплаты</content>
   <content>Document.ВКМ_ГрафикОтпусков</content>
   <content>InformationRegister.ВКМ_ГрафикОтпусков</content>
+  <content>Report.ВКМ_ВыработкаСпециалистов</content>
+  <content>Report.ВКМ_АнализВыставленныхАктов</content>
+  <content>Report.ВКМ_РасчетыССотрудниками</content>
+  <content>Report.ВКМ_РасходЗапланированныхОтпусков</content>
+  <content>Role.ВКМ_ВыработкаСпециалистовИспользование</content>
+  <content>Role.ВКМ_АнализВыставленныхАктовИспользование</content>
+  <content>Role.ВКМ_РасчетыССотрудникамиИспользование</content>
+  <content>Role.ВКМ_РасходЗапланированныхОтпусковИспользование</content>
   <subsystems>ВКМ_ОбслуживаниеКлиентов</subsystems>
   <subsystems>ВКМ_РасчетЗарплаты</subsystems>
+  <subsystems>ВКМ_Отчеты</subsystems>
 </mdclass:Subsystem>

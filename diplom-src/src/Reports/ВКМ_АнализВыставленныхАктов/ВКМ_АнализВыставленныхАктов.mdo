@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="298f5d28-0395-46d2-a413-74ecdac97157">
+  <producedTypes>
+    <objectType typeId="f532914b-9cf2-4504-9c30-2df2dead7e21" valueTypeId="095961f3-71f3-4af8-9605-244f19e7823e"/>
+    <managerType typeId="7327afbb-c733-415e-a0cc-19e1d5e7c385" valueTypeId="80fdf510-0cdf-4cd1-a1a4-892f9b275f70"/>
+  </producedTypes>
+  <name>ВКМ_АнализВыставленныхАктов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ выставленных актов</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.ВКМ_АнализВыставленныхАктов.Template.СхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <templates uuid="44b5e26f-cc82-4918-8892-231d70100d53">
+    <name>СхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

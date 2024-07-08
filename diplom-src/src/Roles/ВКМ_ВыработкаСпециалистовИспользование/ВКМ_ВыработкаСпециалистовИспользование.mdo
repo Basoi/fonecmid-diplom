@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f04ee8a0-3cd2-4cfc-8341-79ede5362f67">
+  <name>ВКМ_ВыработкаСпециалистовИспользование</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выработка специалистов (Отчет)</value>
+  </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
+</mdclass:Role>

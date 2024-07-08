@@ -12,6 +12,7 @@
     <key>ru</key>
     <value>График отпусков</value>
   </synonym>
+  <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.ВКМ_ГрафикОтпусков.StandardAttribute.Number</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
