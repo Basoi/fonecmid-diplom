@@ -50,71 +50,40 @@
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВКМ_ГрафикОтпусковСрезПоследних.Сотрудник,
-	ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала,
-	ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
-	СУММА(ВКМ_ГрафикОтпусковСрезПоследних.КоличествоДней) КАК КоличествоДнейПлан,
-	РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, &amp;ТекущаяДатаСеанса, День) - ВЫБОР
-		КОГДА &amp;ТекущаяДатаСеанса &gt;= ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
-			ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, &amp;ТекущаяДатаСеанса, День)
+	ВКМ_ГрафикОтпусков.Сотрудник,
+	ВКМ_ГрафикОтпусков.Регистратор,
+	ВКМ_ГрафикОтпусков.ДатаНачала,
+	ВКМ_ГрафикОтпусков.ДатаОкончания,
+	СУММА(ВКМ_ГрафикОтпусков.КоличествоДней) КАК КоличествоДнейПлан,
+	РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусков.ДатаНачала, &amp;ТекущаяДатаСеанса, День) - ВЫБОР
+		КОГДА &amp;ТекущаяДатаСеанса &gt;= ВКМ_ГрафикОтпусков.ДатаОкончания
+			ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусков.ДатаОкончания, &amp;ТекущаяДатаСеанса, День)
 		ИНАЧЕ 0
 	КОНЕЦ КАК КоличествоДнейФакт
 ИЗ
-	РегистрСведений.ВКМ_ГрафикОтпусков.СрезПоследних(КОНЕЦПЕРИОДА(&amp;Период, Год), ДатаНачала &gt;= НАЧАЛОПЕРИОДА(&amp;Период,
-		Год) {Сотрудник В (&amp;Сотрудники)}) КАК ВКМ_ГрафикОтпусковСрезПоследних
+	РегистрСведений.ВКМ_ГрафикОтпусков КАК ВКМ_ГрафикОтпусков
+ГДЕ
+	ВКМ_ГрафикОтпусков.ДатаНачала &gt;= &amp;НачалоПериода
+	И ВКМ_ГрафикОтпусков.ДатаОкончания &lt;= &amp;КонецПериода 
+{ГДЕ Сотрудник В
+	(&amp;Сотрудники)}
 СГРУППИРОВАТЬ ПО
-	ВКМ_ГрафикОтпусковСрезПоследних.Сотрудник,
-	ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала,
-	ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания,
-	РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаНачала, &amp;ТекущаяДатаСеанса, День) - ВЫБОР
-		КОГДА &amp;ТекущаяДатаСеанса &gt;= ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания
-			ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусковСрезПоследних.ДатаОкончания, &amp;ТекущаяДатаСеанса, День)
+	ВКМ_ГрафикОтпусков.Сотрудник,
+	ВКМ_ГрафикОтпусков.Регистратор,
+	ВКМ_ГрафикОтпусков.ДатаНачала,
+	ВКМ_ГрафикОтпусков.ДатаОкончания,
+	РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусков.ДатаНачала, &amp;ТекущаяДатаСеанса, День) - ВЫБОР
+		КОГДА &amp;ТекущаяДатаСеанса &gt;= ВКМ_ГрафикОтпусков.ДатаОкончания
+			ТОГДА РАЗНОСТЬДАТ(ВКМ_ГрафикОтпусков.ДатаОкончания, &amp;ТекущаяДатаСеанса, День)
 		ИНАЧЕ 0
 	КОНЕЦ</query>
 	</dataSet>
-	<totalField>
-		<dataPath>КоличествоДнейПлан</dataPath>
-		<expression>Сумма(КоличествоДнейПлан)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КоличествоДнейФакт</dataPath>
-		<expression>Сумма(КоличествоДнейФакт)</expression>
-	</totalField>
-	<parameter>
-		<name>Период</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<useRestriction>false</useRestriction>
-		<inputParameters>
-			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
-				<dcscor:value xsi:type="v8:LocalStringType">
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ДФ=гггг</v8:content>
-					</v8:item>
-				</dcscor:value>
-			</dcscor:item>
-			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-				<dcscor:use>false</dcscor:use>
-				<dcscor:parameter>ФормаВыбора</dcscor:parameter>
-				<dcscor:value xsi:type="xs:string"/>
-			</dcscor:item>
-		</inputParameters>
-		<use>Always</use>
-	</parameter>
 	<parameter>
 		<name>Сотрудники</name>
 		<title xsi:type="v8:LocalStringType">
@@ -145,11 +114,85 @@
 		<useRestriction>true</useRestriction>
 		<expression>ТекущаяДатаСеанса()</expression>
 	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<expression>НАЧАЛОПЕРИОДА(&amp;Период, "Год")</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(&amp;Период, "Год")</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регистратор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаНачала</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаОкончания</dcsset:field>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоДнейПлан</dcsset:field>
 				</dcsset:item>
@@ -159,16 +202,20 @@
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Сотрудники</dcscor:parameter>
+					<dcsset:userSettingID>76329db6-ac4a-4a5e-aae9-0823bcc1887f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТекущаяДатаСеанса</dcscor:parameter>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
 					</dcscor:value>
-					<dcsset:userSettingID>d32ea09d-9a95-4d30-a52a-96fed61e828c</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Сотрудники</dcscor:parameter>
-					<dcsset:userSettingID>76329db6-ac4a-4a5e-aae9-0823bcc1887f</dcsset:userSettingID>
+					<dcsset:userSettingID>5dea9e5c-2c8b-4b7e-9591-58b5a2094c6b</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -178,13 +225,6 @@
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Сотрудник</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>

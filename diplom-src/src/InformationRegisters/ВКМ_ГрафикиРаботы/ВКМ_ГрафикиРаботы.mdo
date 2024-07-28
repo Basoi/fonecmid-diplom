@@ -12,7 +12,7 @@
   <name>ВКМ_ГрафикиРаботы</name>
   <synonym>
     <key>ru</key>
-    <value>Графики работы</value>
+    <value>Графики работы (Регистр)</value>
   </synonym>
   <comment>//++ ДОБАВЛЕНО Басейко О.С. ВКМ</comment>
   <useStandardCommands>true</useStandardCommands>
@@ -52,11 +52,11 @@
   <dataLockControlMode>Managed</dataLockControlMode>
   <recordPresentation>
     <key>ru</key>
-    <value>График работы</value>
+    <value>График работы (Регистр)</value>
   </recordPresentation>
   <listPresentation>
     <key>ru</key>
-    <value>Графики работ</value>
+    <value>Графики работ (Регистр)</value>
   </listPresentation>
   <resources uuid="14b4ef37-324f-409c-ab6e-c66e8429467e">
     <name>РабочихДней</name>
@@ -112,6 +112,7 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
     <denyIncompleteValues>true</denyIncompleteValues>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
@@ -129,10 +130,13 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
     <fillFromFillingValue>true</fillFromFillingValue>
     <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
     <mainFilter>true</mainFilter>
   </dimensions>
 </mdclass:InformationRegister>

@@ -21,74 +21,84 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаКОплате</dataPath>
-			<field>СуммаКОплате</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма к оплате</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаПоВыполненнымРаботам</dataPath>
 			<field>СуммаПоВыполненнымРаботам</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма по выполненным работам</v8:content>
-				</v8:item>
-			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Сотрудник</dataPath>
-			<field>Сотрудник</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
+			<dataPath>СуммаКОплате</dataPath>
+			<field>СуммаКОплате</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Регистратор</dataPath>
 			<field>Регистратор</field>
-			<role>
-				<dcscom:periodNumber>1</dcscom:periodNumber>
-				<dcscom:periodType>Main</dcscom:periodType>
-			</role>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор,
-	ВКМ_ВыполненныеСотрудникомРаботыОбороты.Сотрудник,
+	ДоговорыКонтрагентов.Владелец КАК Клиент,
+	ДоговорыКонтрагентов.Ссылка КАК Договор,
+	ДоговорыКонтрагентов.ВКМ_СуммаАбонентскойПлаты * (РАЗНОСТЬДАТ(ВЫБОР
+		КОГДА ДоговорыКонтрагентов.ВКМ_ПериодНачалаДействияДоговора &gt; &amp;ДатаНачала
+			ТОГДА ДоговорыКонтрагентов.ВКМ_ПериодНачалаДействияДоговора
+		ИНАЧЕ &amp;ДатаНачала
+	КОНЕЦ, ВЫБОР
+		КОГДА ДоговорыКонтрагентов.ВКМ_ПериодОкончанияДействияДоговора &lt; &amp;ДатаОкончания
+			ТОГДА ДоговорыКонтрагентов.ВКМ_ПериодОкончанияДействияДоговора
+		ИНАЧЕ &amp;ДатаОкончания
+	КОНЕЦ, МЕСЯЦ)+1) КАК СуммаКОплате
+ПОМЕСТИТЬ ВТ_АбонентскаяПлата
+ИЗ
+	Справочник.ДоговорыКонтрагентов КАК ДоговорыКонтрагентов
+ГДЕ
+	ДоговорыКонтрагентов.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровКонтрагентов.ВКМ_АбонентскоеОбслуживание)
+	И (ДоговорыКонтрагентов.ВКМ_ПериодНачалаДействияДоговора &lt;= &amp;ДатаНачала
+	ИЛИ ДоговорыКонтрагентов.ВКМ_ПериодОкончанияДействияДоговора &gt;= &amp;ДатаОкончания)
+{ГДЕ
+	ДоговорыКонтрагентов.Ссылка В (&amp;Договор)}
+
+ИНДЕКСИРОВАТЬ ПО
+	Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент КАК Клиент,
 	ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор КАК Договор,
-	СУММА(ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеРасход) КАК СуммаКОплате,
-	СУММА(ВКМ_ВыполненныеСотрудникомРаботыОбороты.СуммаКОплатеОборот) КАК СуммаПоВыполненнымРаботам
-{ВЫБРАТЬ
-	Регистратор.*,
-	Сотрудник.*,
-	Клиент.*,
-	Договор.*}
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор КАК Регистратор,
+	СУММА(ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеРасход) КАК СуммаПоВыполненнымРаботам
+ПОМЕСТИТЬ ВТ_ОплатаПоРаботам
 ИЗ
 	РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты({&amp;ДатаНачала}, {&amp;ДатаОкончания}, Регистратор, {Клиент В
 	(&amp;Клиент)} {Договор В (&amp;Договор)}) КАК ВКМ_ВыполненныеКлиентуРаботыОбороты
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ВКМ_ВыполненныеСотрудникомРаботы.Обороты({&amp;ДатаНачала}, {&amp;ДатаОкончания},
-			Регистратор, {Сотрудник В (&amp;Сотрудник)}) КАК ВКМ_ВыполненныеСотрудникомРаботыОбороты
-		ПО ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор = ВКМ_ВыполненныеСотрудникомРаботыОбороты.Регистратор
 ГДЕ
 	ТИПЗНАЧЕНИЯ(ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор) = ТИП(Документ.ВКМ_ОбслуживаниеКлиента)
 СГРУППИРОВАТЬ ПО
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор,
-	ВКМ_ВыполненныеСотрудникомРаботыОбороты.Сотрудник,
 	ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент,
-	ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор</query>
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор,
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.Регистратор
+
+ИНДЕКСИРОВАТЬ ПО
+	Договор
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_АбонентскаяПлата.Клиент,
+	ВТ_АбонентскаяПлата.Договор,
+	ВТ_ОплатаПоРаботам.Регистратор,
+	ВТ_АбонентскаяПлата.СуммаКОплате,
+	ВТ_ОплатаПоРаботам.СуммаПоВыполненнымРаботам
+ИЗ
+	ВТ_АбонентскаяПлата КАК ВТ_АбонентскаяПлата
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОплатаПоРаботам КАК ВТ_ОплатаПоРаботам
+		ПО ВТ_АбонентскаяПлата.Договор = ВТ_ОплатаПоРаботам.Договор</query>
 	</dataSet>
-	<totalField>
-		<dataPath>СуммаКОплате</dataPath>
-		<expression>Сумма(СуммаКОплате)</expression>
-	</totalField>
 	<totalField>
 		<dataPath>СуммаПоВыполненнымРаботам</dataPath>
 		<expression>Сумма(СуммаПоВыполненнымРаботам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаКОплате</dataPath>
+		<expression>Сумма(СуммаКОплате)</expression>
 	</totalField>
 	<parameter>
 		<name>ДатаОкончания</name>
@@ -137,20 +147,7 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Сотрудник</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Сотрудник</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВКМ_Сотрудники</v8:Type>
-		</valueType>
-		<useRestriction>false</useRestriction>
-		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Договор</name>
@@ -186,6 +183,15 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Клиент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Договор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Регистратор</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаКОплате</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -194,15 +200,11 @@
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>Период</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
 					<dcsset:userSettingID>6b62d624-1690-4dc0-a670-9c9fae9eb7ce</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Сотрудник</dcscor:parameter>
-					<dcsset:userSettingID>deb72a36-69c1-4568-bbb7-ffe52cfd812d</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
@@ -222,34 +224,12 @@
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Клиент</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
-				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:groupItems>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Договор</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						</dcsset:item>
-					</dcsset:groupItems>
-					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-					</dcsset:order>
-					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-					</dcsset:selection>
-				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
